@@ -1,0 +1,7 @@
+com\xworkz\soft\service\SoftService.class
+com\xworkz\soft\service\SoftServiceImpl.class
+com\xworkz\soft\repo\SoftRepoImpl.class
+com\xworkz\soft\util\JDBCUtil.class
+com\xworkz\soft\dto\SoftDTO.class
+com\xworkz\soft\controller\Runner.class
+com\xworkz\soft\repo\SoftRepo.class
