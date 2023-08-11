@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Registration Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body style="background-image: url(https://staticlearn.shine.com/l/m/images/blog/online_job_seach_portal_features.jpg);
+  background-repeat: no-repeat;background-size: 100% 100%;">
+  <nav class="navbar navbar-expand-lg bg-warning navbar-dark border-bottom border-dark">
+    <div class="container-fluid">
+      <img
+        src="data:image/png;base64,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"
+        alt="Logo" width="110" height="50">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active fs-5 fw-bold text-dark" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 fw-bold text-dark" href="register.html">Registration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 fw-bold me-2 text-dark" href="login.html">Login</a>
+          </li>
+        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
+          aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <button class="btn bg-warning-subtle dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Explore
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="index.html">Home</a></li>
+                <li><a class="dropdown-item" href="register.html">Registration</a></li>
+                <li><a class="dropdown-item" href="login.html">Login</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <form action="register" method="post">
+    <div class="container mt-3 p-3 border rounded w-50 bg-dark-subtle">
+      <label for="exampleFormControlInput1" class="form-label mb-1">User Name</label>
+      <div class="input-group">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-badge-fill"></i></span>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter User Name"
+          name="userName" required="required">
+      </div>
+      <label for="exampleFormControlInput1" class="form-label pt-1 mb-1">Email</label>
+      <div class="input-group">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope-at-fill"></i></span>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Email" name="emailId"
+          required="required">
+      </div>
+      <label for="exampleFormControlInput1" class="form-label pt-1 mb-1">Mobile Number</label>
+      <div class="input-group">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-telephone-plus-fill"></i></span>
+        <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="Enter Mobile Number"
+          name="phoneNumber" required="required">
+      </div>
+      <label for="exampleFormControlInput1" class="form-label pt-1 mb-1">Address</label>
+      <div class="input-group">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo-alt-fill"></i></span>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Address" name="address"
+          required="required">
+      </div>
+      <label for="exampleFormControlInput1" class="form-label pt-1 mb-1">Password</label>
+      <div class="input-group">
+        <span class="input-group-text" id="basic-addon1"><i class="bi bi-key-fill"></i></i></span>
+        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Enter Password"
+          name="psw" required="required">
+      </div>
+      <label for="exampleFormControlInput1" class="form-label pt-1 mb-1">Gender</label>
+      <select class="form-select mb-1" aria-label="Default select example" name="gender" required>
+        <option selected>Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+        <label class="form-check-label" for="flexCheckDefault">
+          I Agree to <a href="#">terms and conditions</a>
+        </label>
+      </div>
+      <input type="submit" class="btn btn-success mt-2 fw-semibold">
+    </div>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

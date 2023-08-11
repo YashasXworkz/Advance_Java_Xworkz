@@ -1,0 +1,6 @@
+com\xworkz\jobsearchapp\JobSearchAppServlet.class
+com\xworkz\jobsearchapp\dto\UserDTO.class
+com\xworkz\jobsearchapp\service\JobSearchServiceImpl.class
+com\xworkz\jobsearchapp\service\JobSearchServiceInter.class
+com\xworkz\jobsearchapp\repository\JobSearchRepoImpl.class
+com\xworkz\jobsearchapp\repository\JobSearchRepoInter.class
