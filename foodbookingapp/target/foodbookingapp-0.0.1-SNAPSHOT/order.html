@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Food Booking Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container p-3 mt-5 w-50 border border-dark rounded fw-medium bg-secondary text-light">
+    <form action="click" method="post">
+      <div class="mb-2">
+        <label for="exampleFormControlInput1" class="form-label">Customer Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name"
+          name="custName" required>
+      </div>
+      <div class="mb-2">
+        <label for="exampleFormControlInput1" class="form-label">Food Name</label>
+        <select class="form-select" aria-label="Default select example" name="foodName" required>
+          <option selected>Choose your favorite food</option>
+          <option value="gobi">Gobi</option>
+          <option value="panipuri">Pani Puri</option>
+          <option value="idli">Idli</option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <label for="exampleFormControlInput1" class="form-label">Food Type</label>
+        <select class="form-select" aria-label="Default select example" name="foodType" required>
+          <option selected>Choose your food type</option>
+          <option value="spicy">Spicy</option>
+          <option value="sweet">Sweet</option>
+          <option value="medium">Medium</option>
+          <option value="lessspicy">Less Spicy</option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <label for="exampleFormControlInput1" class="form-label">Quantity</label>
+        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Select" min="1" max="10"
+          name="qty" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Address</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter address" name="address"
+          required>
+      </div>
+      <input type="submit" class="btn btn-success fw-medium">
+    </form>
+  </div>
+
+</body>
+
+</html>
