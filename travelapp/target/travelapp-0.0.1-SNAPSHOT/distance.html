@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Distance Calculator Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container p-2 mt-5 w-50 border border-dark rounded fw-medium">
+    <form action="distance" method="post">
+      <div class="row">
+        <div class="col">
+          <div class="mb-2">
+            <label for="exampleFormControlInput1" class="form-label">From</label>
+            <input type="text" class="form-control border border-secondary" id="exampleFormControlInput1"
+              placeholder="Enter Start" name="start" required>
+          </div>
+        </div>
+        <div class="col mb-2">
+          <div class="mb-2">
+            <label for="exampleFormControlInput1" class="form-label">To</label>
+            <input type="text" class="form-control border border-secondary" id="exampleFormControlInput1"
+              placeholder="Enter End" name="end" required>
+          </div>
+        </div>
+      </div>
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
+
+</body>
+
+</html>
