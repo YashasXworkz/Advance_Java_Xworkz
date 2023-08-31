@@ -17,9 +17,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "isro_info")
 @NamedQuery(name = "findAll", query = "SELECT en FROM IsroEntity en")
-@NamedQuery(name = "findById", query = "SELECT en FROM IsroEntity en WHERE id=3")
-@NamedQuery(name = "updateChairmanByHeadQuarter", query = "UPDATE IsroEntity en SET en.chairman='John' WHERE en.headquarter='delhi'")
-@NamedQuery(name = "deleteById", query = "DELETE FROM IsroEntity en WHERE id=6")
+@NamedQuery(name = "findById", query = "SELECT en FROM IsroEntity en WHERE id=:id")
+@NamedQuery(name = "updateChairmanByHeadQuarter", query = "UPDATE IsroEntity en SET en.chairman=:chairman WHERE en.headquarter=:headquarter")
+@NamedQuery(name = "deleteById", query = "DELETE FROM IsroEntity en WHERE en.id=:id")
 public class IsroEntity implements Serializable {
 
 	@Id
