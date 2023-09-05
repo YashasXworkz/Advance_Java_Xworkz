@@ -7,14 +7,10 @@ import com.xworkz.passport.entity.PassportEntity;
 
 public interface PassportRepo {
 	boolean onSave(PassportDTO dto);
-
 	boolean onUpdate(String existingEmail, String newOffice);
-
 	boolean onSearch(int id);
-
 	List<PassportEntity> getAll();
-
 	List<PassportEntity> searchByEmail(String existingEmail);
-
 	PassportEntity searchByPhone(Long existingPhone);
+	Long getCount();
 }

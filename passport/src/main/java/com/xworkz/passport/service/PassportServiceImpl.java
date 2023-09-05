@@ -73,4 +73,9 @@ public class PassportServiceImpl implements PassportService {
 			return null;
 		}
 	}
+
+	@Override
+	public Long getCount() {
+		return repo.getCount();
+	}
 }

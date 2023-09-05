@@ -14,7 +14,7 @@ public class PassportRunner {
 		Scanner sc = new Scanner(System.in);
 		PassportDTO dto = new PassportDTO("Yashas", new Date(), "yashas@gmail.com", 9972902388L, "yashas@12", "yashas@12",
 				"bengaluru", 553723764965L);
-//		System.out.println(dto);
+		System.out.println(dto);
 		String text;
 		PassportService service = new PassportServiceImpl();
 		do {
@@ -25,7 +25,8 @@ public class PassportRunner {
 					3. Search by ID
 					4. Get all passport details
 					5. Get details by email
-					6. Get details by phone number""");
+					6. Get details by phone number
+					7. Get total count of details""");
 			int choice = sc.nextInt();
 
 			switch (choice) {
@@ -62,6 +63,11 @@ public class PassportRunner {
 				System.out.println("Enter existing phone number to search: ");
 				Long phone = sc.nextLong();
 				PassportEntity result = service.searchByPhone(phone);
+				System.out.println(result);
+				break;
+			}
+			case 7: {
+				Long result = service.getCount();
 				System.out.println(result);
 				break;
 			}

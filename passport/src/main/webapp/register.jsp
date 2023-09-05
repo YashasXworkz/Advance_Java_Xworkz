@@ -9,9 +9,12 @@
 </head>
 <body>
   <%@include file="navbar.jsp"%>
-  <div class="container p-2 mt-2 border border-secondary-subtle shadow-lg fw-semibold">
+  <div class="container p-2 mt-3 border border-secondary-subtle shadow-lg fw-semibold w-75">
     <h4 class="text-center bg-primary-subtle p-2 border border-primary text-primary">Registration Form</h4>
     <hr>
+    <p class="fw-bold">${succmsg}</p>
+    <p class="text-danger fw-bold">${errmsg}</p>
+
     <form action="save" method="post">
       <div class="row">
         <div class="col border-end border-dark-subtle">
@@ -25,7 +28,7 @@
             <label class="form-label">Phone Number</label> <input type="tel" class="form-control" placeholder="Enter Phone +91" name="uphone" required>
           </div>
           <div class="mb-2">
-            <label class="form-label">Date of birth</label> <input type="date" class="form-control" name="udob" required>
+            <label class="form-label">Date of birth</label> <input type="date" class="form-control" max="2006-01-01" name="udob" required>
           </div>
         </div>
         <div class="col">
@@ -34,6 +37,7 @@
           </div>
           <div class="mb-2">
             <label class="form-label">Confirm Password</label> <input type="password" class="form-control" placeholder="Enter password again" name="upass2" required>
+            <p class="text-danger fw-bold">${passerr}</p>
           </div>
           <div class="mb-2">
             <label class="form-label">Passport Office</label> <select class="form-select" aria-label="Default select example" name="passOffice" required>

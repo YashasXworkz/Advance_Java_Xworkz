@@ -22,26 +22,22 @@ import lombok.NoArgsConstructor;
 		@NamedQuery(name = "findById", query = "SELECT p FROM PassportEntity p WHERE p.id = :id"),
 		@NamedQuery(name = "findAll", query = "SELECT p FROM PassportEntity p"),
 		@NamedQuery(name = "findByEmail", query = "SELECT p FROM PassportEntity p WHERE p.email = :email"),
-		@NamedQuery(name = "findByPhone", query = "SELECT p FROM PassportEntity p WHERE p.phoneNo = :phNo") })
+		@NamedQuery(name = "findByPhone", query = "SELECT p FROM PassportEntity p WHERE p.phoneNo = :phNo"),
+		@NamedQuery(name = "countAll", query = "SELECT COUNT(p) FROM PassportEntity p") })
 public class PassportEntity {
 	@Id
-	@Column(name = "p_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column(name = "p_name")
 	private String name;
-	@Column(name = "p_dob")
-	private Date dob;
-	@Column(name = "p_email")
 	private String email;
-	@Column(name = "p_phoneNo")
+	private Date dob;
+	@Column(name = "phone_no")
 	private Long phoneNo;
-	@Column(name = "p_password")
 	private String password;
-	@Column(name = "p_confirm_password")
+	@Column(name = "confirm_password")
 	private String confirmPassword;
-	@Column(name = "p_passport_office")
-	private String passportOffice;
-	@Column(name = "p_aadhaarNo")
+	@Column(name = "aadhaar_no")
 	private Long aadhaarNo;
+	@Column(name = "passport_office")
+	private String passportOffice;
 }

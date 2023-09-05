@@ -90,6 +90,7 @@ public class PassportRepoImpl implements PassportRepo {
 
 	@Override
 	public List<PassportEntity> searchByEmail(String existingEmail) {
+		System.out.println("Invoked searchByEmail method");
 		EntityManager manager = factory.createEntityManager();
 		Query query = manager.createNamedQuery("findByEmail");
 		query.setParameter("email", existingEmail);
@@ -99,10 +100,19 @@ public class PassportRepoImpl implements PassportRepo {
 
 	@Override
 	public PassportEntity searchByPhone(Long existingPhone) {
+		System.out.println("Invoked searchByPhone method");
 		EntityManager manager = factory.createEntityManager();
 		Query query = manager.createNamedQuery("findByPhone");
 		query.setParameter("phNo", existingPhone);
 		PassportEntity entity = (PassportEntity) query.getSingleResult();
 		return entity;
+	}
+
+	@Override
+	public Long getCount() {
+		System.out.println("Invoked getCount method");
+		EntityManager manager = factory.createEntityManager();
+		Long counted = (Long) manager.createNamedQuery("countAll").getSingleResult();
+		return counted;
 	}
 }
