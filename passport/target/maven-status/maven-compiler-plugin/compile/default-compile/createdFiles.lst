@@ -1,7 +1,9 @@
 com\xworkz\passport\dto\PassportDTO.class
+com\xworkz\passport\controller\UpdateServlet.class
 com\xworkz\passport\repository\PassportRepo.class
+com\xworkz\passport\controller\DeleteServlet.class
 com\xworkz\passport\service\PassportService.class
-com\xworkz\passport\controller\PassportRunner.class
 com\xworkz\passport\repository\PassportRepoImpl.class
 com\xworkz\passport\service\PassportServiceImpl.class
 com\xworkz\passport\entity\PassportEntity.class
+com\xworkz\passport\controller\SaveServlet.class

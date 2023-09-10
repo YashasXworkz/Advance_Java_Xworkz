@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home</title>
+<title>Home Page</title>
 <%@include file="style.jsp"%>
 </head>
 <body>

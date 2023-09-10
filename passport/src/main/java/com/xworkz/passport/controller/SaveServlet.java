@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.xworkz.passport.dto.PassportDTO;
-import com.xworkz.passport.entity.PassportEntity;
 import com.xworkz.passport.service.PassportService;
 import com.xworkz.passport.service.PassportServiceImpl;
 
@@ -19,7 +18,6 @@ import com.xworkz.passport.service.PassportServiceImpl;
 public class SaveServlet extends HttpServlet {
 	PassportService service;
 	PassportDTO dto;
-	PassportEntity entity;
 
 	public SaveServlet() {
 		System.out.println("Invoked SaveServlet Constructor");
@@ -29,7 +27,6 @@ public class SaveServlet extends HttpServlet {
 	public void init() throws ServletException {
 		service = new PassportServiceImpl();
 		dto = new PassportDTO();
-		entity = new PassportEntity();
 	}
 
 	@Override

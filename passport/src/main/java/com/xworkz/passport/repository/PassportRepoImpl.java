@@ -12,7 +12,6 @@ import com.xworkz.passport.dto.PassportDTO;
 import com.xworkz.passport.entity.PassportEntity;
 
 public class PassportRepoImpl implements PassportRepo {
-
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory("com.xworkz");
 
 	@Override
@@ -38,81 +37,126 @@ public class PassportRepoImpl implements PassportRepo {
 	}
 
 	@Override
-	public boolean onUpdate(String existingEmail, String newOffice) {
+	public List<PassportEntity> getAll() {
 		System.out.println("Invoked onUpdate method");
 		EntityManager manager = factory.createEntityManager();
-		EntityTransaction transaction = manager.getTransaction();
-		Query query = manager.createNamedQuery("updateByEmail");
-		query.setParameter("email", existingEmail);
-		List<PassportEntity> list = query.getResultList();
-		System.out.println(list);
-		transaction.begin();
-
-		if (!list.isEmpty()) {
-			for (PassportEntity pe : list) {
-				PassportEntity entity = manager.find(PassportEntity.class, pe.getId());
-				entity.setPassportOffice(newOffice);
-				manager.merge(entity);
-			}
-			transaction.commit();
-			System.out.println("Entity updated successfully");
-			manager.close();
-			return true;
-		} else {
-			System.out.println("No entities found for the provided email");
-			return false;
-		}
-	}
-
-	@Override
-	public boolean onSearch(int id) {
-		System.out.println("Invoked onSearch method");
-		EntityManager manager = factory.createEntityManager();
-		Query query = manager.createNamedQuery("findById");
-		query.setParameter("id", id);
-		Object result = query.getSingleResult();
-		if (result != null) {
-			System.out.println("Entity found: " + result);
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	@Override
-	public List<PassportEntity> getAll() {
-		System.out.println("Invoked getAll method");
-		EntityManager manager = factory.createEntityManager();
 		Query query = manager.createNamedQuery("findAll");
-		List<PassportEntity> list = query.getResultList();
-		return list;
+		List<PassportEntity> entities = query.getResultList();
+		return entities;
 	}
 
 	@Override
-	public List<PassportEntity> searchByEmail(String existingEmail) {
-		System.out.println("Invoked searchByEmail method");
+	public PassportEntity getById(int id) {
+		System.out.println("Invoked getById method");
 		EntityManager manager = factory.createEntityManager();
-		Query query = manager.createNamedQuery("findByEmail");
-		query.setParameter("email", existingEmail);
-		List<PassportEntity> list = query.getResultList();
-		return list;
-	}
-
-	@Override
-	public PassportEntity searchByPhone(Long existingPhone) {
-		System.out.println("Invoked searchByPhone method");
-		EntityManager manager = factory.createEntityManager();
-		Query query = manager.createNamedQuery("findByPhone");
-		query.setParameter("phNo", existingPhone);
-		PassportEntity entity = (PassportEntity) query.getSingleResult();
+		/*
+		 * Query query = manager.createNamedQuery("findById");
+		 * query.setParameter("id", id);
+		 * PassportEntity entity = (PassportEntity) query.getSingleResult();
+		 * return entity;
+		 */
+		PassportEntity entity = manager.find(PassportEntity.class, id);
 		return entity;
 	}
 
 	@Override
-	public Long getCount() {
-		System.out.println("Invoked getCount method");
+	public boolean onUpdate(PassportEntity entity) {
+		System.out.println("Invoked onUpdate method");
 		EntityManager manager = factory.createEntityManager();
-		Long counted = (Long) manager.createNamedQuery("countAll").getSingleResult();
-		return counted;
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		manager.merge(entity);
+		transaction.commit();
+		manager.close();
+		return true;
+	}
+
+	@Override
+	public boolean onDelete(int id) {
+		System.out.println("Invoked onDelete method");
+		EntityManager manager = factory.createEntityManager();
+		EntityTransaction transaction = manager.getTransaction();
+		transaction.begin();
+		PassportEntity entity = manager.find(PassportEntity.class, id);
+		manager.remove(entity);
+		transaction.commit();
+		manager.close();
+		return true;
 	}
 }
+
+/*
+ * @Override
+ * public boolean onUpdate(String existingEmail, String newOffice) {
+ * System.out.println("Invoked onUpdate method");
+ * EntityManager manager = factory.createEntityManager();
+ * EntityTransaction transaction = manager.getTransaction();
+ * Query query = manager.createNamedQuery("updateByEmail");
+ * query.setParameter("email", existingEmail);
+ * List<PassportEntity> list = query.getResultList();
+ * System.out.println(list);
+ * transaction.begin();
+ * if (!list.isEmpty()) {
+ * for (PassportEntity pe : list) {
+ * PassportEntity entity = manager.find(PassportEntity.class, pe.getId());
+ * entity.setPassportOffice(newOffice);
+ * manager.merge(entity);
+ * }
+ * transaction.commit();
+ * System.out.println("Entity updated successfully");
+ * manager.close();
+ * return true;
+ * } else {
+ * System.out.println("No entities found for the provided email");
+ * return false;
+ * }
+ * }
+ * @Override
+ * public boolean onSearch(int id) {
+ * System.out.println("Invoked onSearch method");
+ * EntityManager manager = factory.createEntityManager();
+ * Query query = manager.createNamedQuery("findById");
+ * query.setParameter("id", id);
+ * Object result = query.getSingleResult();
+ * if (result != null) {
+ * System.out.println("Entity found: " + result);
+ * return true;
+ * } else {
+ * return false;
+ * }
+ * }
+ * @Override
+ * public List<PassportEntity> getAll() {
+ * System.out.println("Invoked getAll method");
+ * EntityManager manager = factory.createEntityManager();
+ * Query query = manager.createNamedQuery("findAll");
+ * List<PassportEntity> list = query.getResultList();
+ * return list;
+ * }
+ * @Override
+ * public List<PassportEntity> searchByEmail(String existingEmail) {
+ * System.out.println("Invoked searchByEmail method");
+ * EntityManager manager = factory.createEntityManager();
+ * Query query = manager.createNamedQuery("findByEmail");
+ * query.setParameter("email", existingEmail);
+ * List<PassportEntity> list = query.getResultList();
+ * return list;
+ * }
+ * @Override
+ * public PassportEntity searchByPhone(Long existingPhone) {
+ * System.out.println("Invoked searchByPhone method");
+ * EntityManager manager = factory.createEntityManager();
+ * Query query = manager.createNamedQuery("findByPhone");
+ * query.setParameter("phNo", existingPhone);
+ * PassportEntity entity = (PassportEntity) query.getSingleResult();
+ * return entity;
+ * }
+ * @Override
+ * public Long getCount() {
+ * System.out.println("Invoked getCount method");
+ * EntityManager manager = factory.createEntityManager();
+ * Long counted = (Long)
+ * manager.createNamedQuery("countAll").getSingleResult();
+ * return counted;
+ * }
+ */
