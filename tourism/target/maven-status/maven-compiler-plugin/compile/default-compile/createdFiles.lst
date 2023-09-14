@@ -1,0 +1,7 @@
+com\xworkz\tourism\entity\TourismEntity.class
+com\xworkz\tourism\service\TourismService.class
+com\xworkz\tourism\dto\TourismDTO.class
+com\xworkz\tourism\repo\TourismRepoImpl.class
+com\xworkz\tourism\service\TourismServiceImpl.class
+com\xworkz\tourism\controller\TourismRunner.class
+com\xworkz\tourism\repo\TourismRepo.class
