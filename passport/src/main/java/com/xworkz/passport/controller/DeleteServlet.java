@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.xworkz.passport.entity.PassportEntity;
 import com.xworkz.passport.service.PassportService;
 import com.xworkz.passport.service.PassportServiceImpl;
 
