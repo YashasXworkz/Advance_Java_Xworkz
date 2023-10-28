@@ -17,7 +17,7 @@ public class BankInsert {
 		manager.getTransaction().begin();
 
 		CustomerEntity custEntity = new CustomerEntity("Yashas", "S", "yashas@gmail.com", 7765486633L,
-				LocalDate.of(2000, 04, 22), 35000.00, "Bengaluru", "BSc", "A+", 1234567890L, "Savings", "Active");
+				LocalDate.of(2000, 04, 22), 35000.00, "Bengaluru", "BSc", "A+", 1234567890L, "savings", "active");
 		System.out.println(custEntity);
 		manager.persist(custEntity);
 		manager.getTransaction().commit();
