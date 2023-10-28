@@ -11,7 +11,7 @@
     <version.mysql-connector>8.0.33</version.mysql-connector>
     <version.servlet>3.1.0</version.servlet>
     <version.lombok>1.18.28</version.lombok>
-    <version.quarkus>1.13.3.Final</version.quarkus>
+    <version.quarkus>2.16.11.Final</version.quarkus>
     <version.jstl>1.2</version.jstl>
   </properties>
   <dependencies>
@@ -55,7 +55,6 @@
       <artifactId>jstl</artifactId>
       <version>${version.jstl}</version>
     </dependency>
-
   </dependencies>
   <build>
     <plugins>
